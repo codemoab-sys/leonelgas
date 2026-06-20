@@ -1,0 +1,8 @@
+{
+  "name": "leonel-gas-web",
+  "version": "1.0.0",
+  "description": "Sitio web informativo - Distribuidora de gas Leonel Gas",
+  "main": "index.html",
+  "author": "Leonel Gas",
+  "license": "MIT"
+}
