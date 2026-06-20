@@ -970,6 +970,63 @@
         <i class="bi bi-chat-dots"></i>
     </a>
 
+    <!-- Prices Modal -->
+    <div class="modal fade" id="pricesModal" tabindex="-1" aria-labelledby="pricesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 1rem; border: none; box-shadow: 0 20px 60px -20px rgba(212, 134, 14, 0.6);">
+                <div class="modal-header" style="background: var(--gradient-flame); border: none; padding: 2rem; border-radius: 1rem 1rem 0 0;">
+                    <div>
+                        <h5 class="modal-title" id="pricesModalLabel" style="color: white; font-weight: 700; font-size: 1.5rem;">📊 Precios de Hoy</h5>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Actualizado al momento</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar" style="margin-left: auto;"></button>
+                </div>
+                <div class="modal-body" style="padding: 2rem;">
+                    <!-- PrimaxGas Card -->
+                    <div style="margin-bottom: 1.5rem; padding: 1.5rem; background: #f8f9fa; border-radius: 0.875rem; border-left: 4px solid var(--primary-color);">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <p style="margin: 0; color: #666; font-size: 0.9rem; font-weight: 600;">🔥 PRIMAX GAS</p>
+                                <p style="margin: 0.5rem 0 0 0; color: #333; font-size: 0.95rem;">Balón estándar 15kg</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="margin: 0; font-size: 0.85rem; color: #999;">Precio</p>
+                                <p style="margin: 0.25rem 0 0 0; font-size: 2rem; font-weight: 700; background: var(--gradient-flame); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">S/ 52</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pecsa Gas Card -->
+                    <div style="padding: 1.5rem; background: #f0f7ff; border-radius: 0.875rem; border-left: 4px solid #1a3a4a;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <p style="margin: 0; color: #1a3a4a; font-size: 0.9rem; font-weight: 600;">💎 PECSA GAS</p>
+                                <p style="margin: 0.5rem 0 0 0; color: #333; font-size: 0.95rem;">Balón Premium 15kg</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="margin: 0; font-size: 0.85rem; color: #999;">Precio</p>
+                                <p style="margin: 0.25rem 0 0 0; font-size: 2rem; font-weight: 700; color: #1a3a4a;">S/ 50</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Message -->
+                    <div style="margin-top: 1.5rem; padding: 1rem; background: #fff3cd; border-radius: 0.75rem; border-left: 4px solid #ffc107;">
+                        <p style="margin: 0; color: #856404; font-size: 0.9rem; font-weight: 500;">
+                            <i class="bi bi-info-circle" style="margin-right: 0.5rem;"></i>
+                            Precios sujetos a cambios según disponibilidad
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="border-top: 1px solid #eee; padding: 1rem 2rem;">
+                    <a href="https://wa.me/51900788523?text=Hola%2C%20me%20interesa%20pedir%20gas" class="btn" style="background: var(--gradient-flame); color: white; flex: 1; border: none; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <i class="bi bi-whatsapp"></i> Pedir Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Location Modal -->
     <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -992,6 +1049,17 @@
     </div>
 
     <script>
+        // Show prices modal on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const pricesModal = new bootstrap.Modal(document.getElementById('pricesModal'), {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+                pricesModal.show();
+            }, 500); // Small delay for better UX
+        });
+
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
