@@ -119,7 +119,7 @@ function obtenerUbicacion() {
             $('#ubicacionLongitud').val(pos.coords.longitude);
             $('#ubicacionPrecision').val(pos.coords.accuracy);
             status.removeClass('info').addClass('success')
-                .html('Ubicaci\u00f3n obtenida. Precisi\u00f3n: ' + pos.coords.accuracy.toFixed(1) + ' metros');
+                .html('Ubicaci\u00f3n obtenida. Precisi\u00f3n: ' + pos.coords.accuracy.toFixed(1) + ' metros <button type="button" class="btn-recapture" onclick="obtenerUbicacion()">Volver a capturar</button>');
         },
         function (err) {
             var msg = 'Error al obtener ubicaci\u00f3n: ';
