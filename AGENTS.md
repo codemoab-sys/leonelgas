@@ -20,7 +20,7 @@
 
 ## Deployment quirks (subdirectory `/sistema/`)
 
-- All URLs (PHP redirects + JS `BASE_URL`) must include `index.php` explicitly, e.g. `baseUrl() . '/index.php?action=...'`, never `baseUrl() . '/?action=...'`
+- All URLs (PHP redirects + JS) must include `/index.php` explicitly, e.g. `baseUrl() . '/index.php?action=...'`, never `baseUrl() . '/?action=...'` (server doesn't serve `index.php` as default in subdirectory)
 - `sistema/index.htm` exists as meta-refresh fallback for `/sistema/` directory access
 - `sistema/.htaccess` has `RewriteBase /sistema/` and rewrite rules for clean-ish URLs
 - Uploaded photos stored in `sistema/uploads/fachadas/`
@@ -35,8 +35,8 @@
 
 ## JS conventions
 
-- `BASE_URL` = `baseUrl() + '/index.php'` (defined in view template before `app.js` load)
-- All AJAX calls use `BASE_URL + '/?action=...'` (note: `/?action=` not `/index.php?action=` in JS — the ?action works because BASE_URL already ends with index.php)
+- `BASE_URL` = `baseUrl()` (defined in view template before `app.js` load)
+- All AJAX calls use `BASE_URL + '/index.php?action=...'` (never `BASE_URL + '/?action=...'` — the `/sistema/` subdirectory doesn't serve `index.php` by default)
 - Modal pattern: `#modalId.fadeIn(150)` / `cerrarModal('modalId')`
 
 ## Commands
