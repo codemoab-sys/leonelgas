@@ -1,6 +1,6 @@
 $(function () {
-    initSelect2('#selectCliente', BASE_URL + '/?action=clientes.buscar');
-    initSelect2('#selectClienteModal', BASE_URL + '/?action=clientes.buscar');
+    initSelect2('#selectCliente', BASE_URL + '/index.php?action=clientes.buscar');
+    initSelect2('#selectClienteModal', BASE_URL + '/index.php?action=clientes.buscar');
 
     if (typeof CURRENT_CLIENTE !== 'undefined') {
         preseleccionarCliente(CURRENT_CLIENTE.id, CURRENT_CLIENTE.nombre);
@@ -16,7 +16,7 @@ $(function () {
 });
 
 function salir() {
-    window.location.href = BASE_URL + '/?action=auth.salir';
+    window.location.href = BASE_URL + '/index.php?action=auth.salir';
 }
 
 function abrirInfoUbicacion() {
@@ -97,7 +97,7 @@ function preseleccionarCliente(id, nombre) {
         var option = new Option(nombre, id, true, true);
         $select.append(option).trigger('change');
     } else {
-        $.get(BASE_URL + '/?action=clientes.obtener&id=' + id, function (data) {
+        $.get(BASE_URL + '/index.php?action=clientes.obtener&id=' + id, function (data) {
             var option = new Option(data.nombre, data.id, true, true);
             $select.append(option).trigger('change');
         });
@@ -163,7 +163,7 @@ function guardarCliente(event) {
     var editando = $('#clienteId').val() > 0;
 
     $.ajax({
-        url: BASE_URL + '/?action=clientes.guardar',
+        url: BASE_URL + '/index.php?action=clientes.guardar',
         method: 'POST',
         data: data,
         processData: false,
@@ -202,7 +202,7 @@ function guardarUbicacion(event) {
     }
 
     $.ajax({
-        url: BASE_URL + '/?action=ubicaciones.guardar',
+        url: BASE_URL + '/index.php?action=ubicaciones.guardar',
         method: 'POST',
         data: data,
         processData: false,
@@ -254,7 +254,7 @@ function guardarVenta(event) {
     var data = new FormData($('#formVenta')[0]);
 
     $.ajax({
-        url: BASE_URL + '/?action=ventas.guardar',
+        url: BASE_URL + '/index.php?action=ventas.guardar',
         method: 'POST',
         data: data,
         processData: false,
@@ -345,7 +345,7 @@ function imprimirTicket() {
 }
 
 function verCliente(id) {
-    $.get(BASE_URL + '/?action=clientes.ubicaciones&id=' + id, function (res) {
+    $.get(BASE_URL + '/index.php?action=clientes.ubicaciones&id=' + id, function (res) {
         var c = res.cliente;
         var ubicaciones = res.ubicaciones;
         var ventas = res.ventas;
@@ -415,7 +415,7 @@ function formatDate(dateStr) {
 }
 
 function editarCliente(id) {
-    $.get(BASE_URL + '/?action=clientes.obtener&id=' + id, function (data) {
+    $.get(BASE_URL + '/index.php?action=clientes.obtener&id=' + id, function (data) {
         $('#clienteId').val(data.id);
         $('#clienteNombre').val(data.nombre);
         $('#clienteDni').val(data.dni || '');
