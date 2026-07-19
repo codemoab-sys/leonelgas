@@ -9,6 +9,13 @@ class Database {
     private $conn;
 
     private function __construct() {
+        $envFile = __DIR__ . '/../.env';
+        if (file_exists($envFile)) {
+            foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+                if (str_starts_with(trim($line), '#')) continue;
+                putenv(trim($line));
+            }
+        }
         $this->host = getenv('DB_HOST') ?: '127.0.0.1';
         $this->dbname = getenv('DB_NAME') ?: 'miubicaciones';
         $this->username = getenv('DB_USER') ?: 'root';

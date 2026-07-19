@@ -5,6 +5,7 @@ require_once __DIR__ . '/../config/helpers.php';
 class AuthController {
 
     public function login(): void {
+        session_start();
         if (isset($_SESSION['auth'])) {
             header('Location: ' . baseUrl() . '/');
             exit;
@@ -13,6 +14,7 @@ class AuthController {
     }
 
     public function entrar(): void {
+        session_start();
         $usuario = trim($_POST['usuario'] ?? '');
         $password = trim($_POST['password'] ?? '');
 
@@ -28,6 +30,7 @@ class AuthController {
     }
 
     public function salir(): void {
+        session_start();
         session_destroy();
         header('Location: ' . baseUrl() . '/?action=auth.login');
         exit;
