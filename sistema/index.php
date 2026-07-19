@@ -15,7 +15,7 @@ $action = $_GET['action'] ?? 'clientes.index';
 $publicActions = ['auth.login', 'auth.entrar'];
 
 if (!isset($_SESSION['auth']) && !in_array($action, $publicActions)) {
-    header('Location: ' . baseUrl() . '/?action=auth.login');
+    header('Location: ' . baseUrl() . '/index.php?action=auth.login');
     exit;
 }
 

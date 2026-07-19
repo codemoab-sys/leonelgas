@@ -7,7 +7,7 @@ class AuthController {
     public function login(): void {
         session_start();
         if (isset($_SESSION['auth'])) {
-            header('Location: ' . baseUrl() . '/');
+            header('Location: ' . baseUrl() . '/index.php');
             exit;
         }
         require_once __DIR__ . '/../views/login.php';
@@ -32,7 +32,7 @@ class AuthController {
     public function salir(): void {
         session_start();
         session_destroy();
-        header('Location: ' . baseUrl() . '/?action=auth.login');
+        header('Location: ' . baseUrl() . '/index.php?action=auth.login');
         exit;
     }
 }
