@@ -35,7 +35,9 @@
     <footer class="footer">
         <div class="footer-inner">
             <span class="footer-brand">
-                <a href="https://moabcode.com" target="_blank" rel="noopener">moabcode.com</a>
+                <span>soporte@moabcode.com</span>
+                <span class="footer-sep">|</span>
+                <span>916 377 263</span>
                 <span class="footer-version">v1</span>
             </span>
             <span class="footer-message">Sistema de Clientes y Ubicaciones</span>

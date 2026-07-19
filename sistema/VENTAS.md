@@ -46,6 +46,8 @@ En la mayoría de negocios de delivery, las direcciones están en la cabeza del 
 > 👉 Fácil, mobile, sin personas clave. Lo operas tú y envías a cualquier repartidor.
 >
 > #DeliveryInteligente #ControlDeFlota #GasPeru #NegocioSinEstrés
+>
+> **Contacto:** soporte@moabcode.com | 📱 916 377 263
 
 ---
 
