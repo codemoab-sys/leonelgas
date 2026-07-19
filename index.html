@@ -109,6 +109,42 @@
             cursor: pointer;
         }
 
+        .header-btns {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-admin {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .85rem;
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-admin:hover {
+            background: #0d2530;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .btn-menu-mobile {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+        }
+
         .btn-whatsapp:hover {
             transform: scale(1.05);
             color: white;
@@ -721,10 +757,19 @@
                 <a href="#cobertura">Cobertura</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            <a href="https://wa.me/51900788523?text=Hola%20Leonel%20Gas,%20quiero%20pedir%20un%20bal%C3%B3n%20a%20domicilio." target="_blank" rel="noopener noreferrer" class="btn-whatsapp d-none d-md-inline-flex">
-                <i class="bi bi-chat-dots"></i>
-                <span>Pedir ahora</span>
-            </a>
+            <div class="header-btns">
+                <a href="sistema/" class="btn-admin d-none d-md-inline-flex">
+                    <i class="bi bi-gear"></i>
+                    <span>Admin</span>
+                </a>
+                <a href="https://wa.me/51900788523?text=Hola%20Leonel%20Gas,%20quiero%20pedir%20un%20bal%C3%B3n%20a%20domicilio." target="_blank" rel="noopener noreferrer" class="btn-whatsapp d-none d-md-inline-flex">
+                    <i class="bi bi-chat-dots"></i>
+                    <span>Pedir ahora</span>
+                </a>
+                <button class="btn-menu-mobile d-md-none" onclick="toggleMenu()" aria-label="Menú">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
         </div>
     </header>
 
