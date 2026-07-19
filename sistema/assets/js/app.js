@@ -19,6 +19,10 @@ function salir() {
     window.location.href = BASE_URL + '/?action=auth.salir';
 }
 
+function abrirInfoUbicacion() {
+    $('#modalInfoUbicacion').fadeIn(150);
+}
+
 function abrirInfo() {
     $('#modalInfo').fadeIn(150);
 }
@@ -65,9 +69,18 @@ function buscarCliente() {
 
 function abrirModalRegistrar(clienteId) {
     $('#modalUbicacion').fadeIn(150);
+    $('#ubicacionLatitud').val('');
+    $('#ubicacionLongitud').val('');
+    $('#ubicacionPrecision').val('');
+    $('#ubicacionDetalle').val('');
+    $('#ubicacionStatus').hide().removeClass('success error info');
+    quitarFoto();
     if (clienteId) {
         preseleccionarCliente(clienteId, '');
     }
+    setTimeout(function () {
+        obtenerUbicacion();
+    }, 500);
 }
 
 function abrirModalNuevoCliente() {

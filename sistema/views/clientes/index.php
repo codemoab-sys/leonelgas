@@ -25,10 +25,11 @@
             <button type="button" class="btn btn-primary" onclick="buscarCliente()">Buscar</button>
         </section>
 
-        <section class="actions-top">
-            <button type="button" class="btn btn-success btn-lg" onclick="abrirModalRegistrar()">
+        <section class="actions-top" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+            <button type="button" class="btn btn-success btn-lg" onclick="abrirModalRegistrar()" style="flex:1">
                 + Registrar nueva ubicación
             </button>
+            <button type="button" class="btn-theme" onclick="abrirInfoUbicacion()" title="C&oacute;mo registrar ubicaci&oacute;n" style="flex-shrink:0">?</button>
         </section>
 
         <section class="cliente-list" id="clienteList">
@@ -141,6 +142,30 @@
             <div class="modal-body" id="detalleBody"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="cerrarModal('modalDetalle')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalInfoUbicacion" class="modal-overlay" style="display:none">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>C&oacute;mo registrar una ubicaci&oacute;n</h2>
+                <button type="button" class="modal-close" onclick="cerrarModal('modalInfoUbicacion')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="about-features">
+                    <div class="about-feat"><strong>1.</strong> Debes estar frente a la casa o ubicaci&oacute;n del cliente.</div>
+                    <div class="about-feat"><strong>2.</strong> Al abrir el modal, el GPS capturar&aacute; autom&aacute;ticamente las coordenadas en tiempo real.</div>
+                    <div class="about-feat"><strong>3.</strong> Toma una foto de la fachada para identificar la casa.</div>
+                    <div class="about-feat"><strong>4.</strong> Si no est&aacute;s en la ubicaci&oacute;n del cliente, no podr&aacute;s registrar la direcci&oacute;n exacta.</div>
+                    <div class="about-feat" style="background:#fff3cd;color:#664d03;border:1px solid #ffc107">
+                        <strong>Importante:</strong> Esto es para tener la direcci&oacute;n exacta.
+                        La foto + coordenadas = ubicaci&oacute;n precisa.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="cerrarModal('modalInfoUbicacion')">Entendido</button>
             </div>
         </div>
     </div>

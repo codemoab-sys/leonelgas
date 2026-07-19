@@ -6,6 +6,13 @@
         </div>
         <form id="formUbicacion" onsubmit="guardarUbicacion(event)" autocomplete="off" enctype="multipart/form-data">
             <div class="modal-body">
+                <div class="ubicacion-info">
+                    <strong>Importante:</strong> Debes estar en la casa o ubicaci&oacute;n del cliente.
+                    El GPS capturar&aacute; autom&aacute;ticamente las coordenadas en tiempo real.
+                    Si no est&aacute;s en la ubicaci&oacute;n del cliente, no podr&aacute;s registrar
+                    la direcci&oacute;n exacta. Toma una foto de la fachada para identificarla.
+                </div>
+
                 <div class="form-group">
                     <label for="selectClienteModal">Cliente</label>
                     <select id="selectClienteModal" class="form-control search-select" style="width:100%"
@@ -25,20 +32,16 @@
                     <div class="form-group half">
                         <label for="ubicacionLatitud">Latitud</label>
                         <input type="text" id="ubicacionLatitud" name="latitud" class="form-control"
-                               placeholder="-8.109256" readonly>
+                               readonly>
                     </div>
                     <div class="form-group half">
                         <label for="ubicacionLongitud">Longitud</label>
                         <input type="text" id="ubicacionLongitud" name="longitud" class="form-control"
-                               placeholder="-79.021365" readonly>
+                               readonly>
                     </div>
                 </div>
 
                 <input type="hidden" id="ubicacionPrecision" name="precision_gps">
-
-                <button type="button" class="btn btn-info btn-lg btn-block" onclick="obtenerUbicacion()">
-                    Obtener ubicación
-                </button>
 
                 <div id="ubicacionStatus" class="status-msg" style="display:none"></div>
 
@@ -49,7 +52,7 @@
                                accept="image/*" capture="environment"
                                onchange="previsualizarFoto(event)">
                         <label for="ubicacionFoto" class="btn btn-camera">
-                            Tomar fotografía
+                            Tomar fotografía de la fachada
                         </label>
                     </div>
                     <div id="fotoPreview" class="foto-preview" style="display:none">

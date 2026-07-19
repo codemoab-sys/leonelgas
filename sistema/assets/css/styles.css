@@ -479,6 +479,23 @@ textarea.form-control { resize: vertical; min-height: 60px; }
     color: var(--success);
 }
 
+.ubicacion-info {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    font-size: .85rem;
+    line-height: 1.5;
+    color: #664d03;
+}
+
+[data-theme="dark"] .ubicacion-info {
+    background: #332b00;
+    border-color: #665500;
+    color: #ffd970;
+}
+
 .ticket-actions {
     display: flex;
     flex-direction: column;
