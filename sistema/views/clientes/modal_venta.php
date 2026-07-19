@@ -15,7 +15,7 @@
                     <input type="number" id="ventaBidonesVendidos" name="bidones_vendidos"
                            class="form-control input-lg" min="0" step="1" value="0"
                            inputmode="numeric" oninput="calcularTotalVenta()"
-                           placeholder="Cantidad de balones">
+                           onfocus="this.select()" placeholder="Cantidad de balones">
                 </div>
 
                 <div class="form-group">
@@ -23,14 +23,14 @@
                     <input type="number" id="ventaPrecio" name="precio"
                            class="form-control input-lg" min="0" step="0.10" value="0"
                            inputmode="decimal" oninput="calcularTotalVenta()"
-                           placeholder="0.00">
+                           onfocus="this.select()" placeholder="0.00">
                 </div>
 
                 <div class="form-group">
                     <label for="ventaBidonesVacios">Balones vacíos devueltos</label>
                     <input type="number" id="ventaBidonesVacios" name="bidones_vacios"
                            class="form-control input-lg" min="0" step="1" value="0"
-                           inputmode="numeric"
+                           inputmode="numeric" onfocus="this.select()"
                            placeholder="Cantidad de balones vacíos">
                 </div>
 
