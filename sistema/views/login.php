@@ -49,7 +49,7 @@
             var data = new FormData($('#formLogin')[0]);
             $('#loginError').hide();
             $.ajax({
-                url: '<?= baseUrl() ?>/?action=auth.entrar',
+                url: '<?= baseUrl() ?>/index.php?action=auth.entrar',
                 method: 'POST',
                 data: data,
                 processData: false,
@@ -57,7 +57,7 @@
                 dataType: 'json',
                 success: function (res) {
                     if (res.success) {
-                        window.location.href = '<?= baseUrl() ?>/';
+                        window.location.href = '<?= baseUrl() ?>/index.php';
                     } else {
                         $('#loginError').html(res.message || 'Error').show();
                     }

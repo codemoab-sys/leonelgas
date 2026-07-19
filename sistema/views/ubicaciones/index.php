@@ -108,7 +108,7 @@
     </div>
 
     <script>
-        var BASE_URL = '<?= baseUrl() ?>';
+        var BASE_URL = '<?= baseUrl() ?>/index.php';
         var CURRENT_CLIENTE = <?= json_encode(['id' => $clienteData['id'], 'nombre' => $clienteData['nombre']], JSON_UNESCAPED_UNICODE) ?>;
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

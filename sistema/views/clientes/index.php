@@ -210,7 +210,7 @@
     </div>
 
     <script>
-        var BASE_URL = '<?= baseUrl() ?>';
+        var BASE_URL = '<?= baseUrl() ?>/index.php';
         <?php if (isset($clienteData)): ?>
         var CURRENT_CLIENTE = <?= json_encode(['id' => $clienteData['id'], 'nombre' => $clienteData['nombre']], JSON_UNESCAPED_UNICODE) ?>;
         <?php endif; ?>
